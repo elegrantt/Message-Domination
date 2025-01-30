@@ -65,7 +65,7 @@ button:hover {
 #displayMessage {
     text-align: center; /* Center the message */
     margin-top: 20px; /* Add some space above the message */
-    border: 2px solid red;
+    border: 5px solid red;
     font-size: 18px; /* Optional: Increase font size */
     color: #333; /* Optional: Set a text color */
 }

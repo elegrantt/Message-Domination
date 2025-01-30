@@ -22,6 +22,7 @@ h2, p {
     text-align: center; /* Center text horizontally */
     margin: 0 auto; /* Center the element itself (if it has a defined width) */
     padding: 10px; /* Add some padding for spacing */
+    color: white;
 }
 
 /* Optional: Limit the width of paragraphs for better readability */

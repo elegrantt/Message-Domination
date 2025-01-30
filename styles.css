@@ -1,85 +1,60 @@
-/* Remove default margins and padding from the box */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* Optional: Set a default font */
+/* Basic styling for the header */
+.header {
+  background-color: #f0f0f0; /* Example background color */
+  padding: 10px; /* Example padding */
+  display: flex;
+  justify-content: space-between; /* Align items to start and end */
+  align-items: center; /* Vertically center items */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-/* Style the top bar */
-.message {
-    border-bottom: 2px solid black; /* Bottom border */
-    padding: 15px; /* Add padding inside the bar */
-    width: 100%; /* Full width */
-    margin: 0; /* Remove margin */
-    box-sizing: border-box; /* Include padding and border in width */
-    background-color: #007BFF; /* Blue background color */
-    text-align: center; /* Center the text */
-    color: white; /* White text color */
+/* Style the heading */
+.header h1 {
+  font-size: 1.5em; /* Adjust as needed */
+  margin: 0; /* Remove default margins */
 }
 
-/* Center the rest of the content */
-.MQ_P {
-    text-align: center; /* Center text horizontally */
-    margin: 0 auto; /* Center the element itself (if it has a defined width) */
-    padding: 15px; /* Add some padding for spacing */
-}
-
-/* Optional: Limit the width of paragraphs for better text readability */
-p {
-    max-width: 600px;
-    margin: 0 auto; /* Center paragraphs */
-}
-
-/* Center the text box and button using flexbox */
+/* Style the input container */
 .input-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    gap: 10px; /* Add space between the text box and button */
-    margin-top: 20px; /* Add some space above the container */
-    padding: 0 10px; /* Add padding to prevent content from touching edges */
+  display: flex;
 }
 
-/* Style the text box to make it responsive */
-input[type='text'] {
+/* Style the input field */
+.message-input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+/* Style the submit button */
+.submit-button {
+  padding: 5px 10px;
+  background-color: #4CAF50; /* Example color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    flex: 1; /* Allow the text box to grow and shrink */
-    max-width: 800px; /* Limit maximum width for larger screens */
-    min-width: 200px; /* Ensure it doesn't become too small */
-    box-sizing: border-box; /* Include padding and border in width calculation */
-}
+  }
 
-/* Style the button */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF; /* Match the top bar's blue theme */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    flex-shrink: 0; /* Prevent the button from shrinking */
-}
+  .header h1 {
+    margin-bottom: 5px; /* Add spacing below the heading */
+  }
 
-/* Add hover effect to the button */
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
+  .input-container {
+    width: 100%; /* Make input container full width */
+    margin-bottom: 10px;
+  }
 
-/* Style the displayed message */
-#displayMessage {
-    text-align: center; /* Center the message */
-    margin-top: 20px; /* Add space above the message */
-    font-size: 18px; /* Optional: Increase font size */
-    color: #333; /* Optional: Set a text color */
-    border: 2px solid #007BFF; /* Add border to create a box */
-    padding: 15px; /* Add padding inside the box */
-    border-radius: 4px; /* Optional: Add rounded corners */
-    max-width: 800px; /* Limit maximum width for larger screens */
-    margin-left: auto; /* Center the box horizontally */
-    margin-right: auto;
-    background-color: #f9f9f9; /* Optional: Add a light background color */
+  .message-input {
+    width: calc(100% - 60px); /* Adjust width for button */
+  }
 }

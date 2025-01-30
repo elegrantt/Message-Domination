@@ -72,7 +72,8 @@ button:hover {
     border: 5px solid red;
     font-size: 18px; /* Optional: Increase font size */
     color: #FFFFFF; /* Optional: Set a text color */
-    margin: 16px
+    margin-left: 20px;
+    margin-right: 20px;
 }
 /* Styles for mobile devices */
 @media (max-width: 600px) {

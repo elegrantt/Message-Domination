@@ -29,10 +29,14 @@ p {
     max-width: 600px;
 }
 
-/* Center the text box and button */
+/* Center the text box and button using flexbox */
 .input-container {
-    text-align: center; /* Center the contents horizontally */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    gap: 10px; /* Add space between the text box and button */
     margin-top: 20px; /* Add some space above the container */
+    padding: 0 10px; /* Add padding to prevent content from touching edges */
 }
 
 /* Style the text box to make it responsive */
@@ -41,16 +45,10 @@ input[type="text"] {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 90%; /* Use a percentage-based width for responsiveness */
-    max-width: 600px; /* Set a maximum width for larger screens */
-    box-sizing: border-box; /* Include padding and border in the width calculation */
-}
-
-/* Ensure the container stays centered */
-.input-container {
-    text-align: center; /* Center contents horizontally */
-    margin-top: 20px; /* Add space above the container */
-    padding: 0 10px; /* Add padding to prevent content from touching the edges */
+    flex: 1; /* Allow the text box to grow and shrink */
+    max-width: 600px; /* Limit maximum width for larger screens */
+    min-width: 200px; /* Ensure it doesn't become too small */
+    box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 /* Style the button */
@@ -62,7 +60,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 10px; /* Add some space between the text box and button */
+    flex-shrink: 0; /* Prevent the button from shrinking */
 }
 
 /* Add hover effect to the button */

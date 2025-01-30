@@ -1,4 +1,4 @@
-/* Remove default margins and padding from the body and html */
+/* Remove default margins and padding from the box */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,25 +6,25 @@ body, html {
 }
 
 /* Style the top bar */
-#heading {
+.message {
     border-bottom: 2px solid black; /* Bottom border */
     padding: 15px; /* Add padding inside the bar */
     width: 100%; /* Full width */
     margin: 0; /* Remove margin */
     box-sizing: border-box; /* Include padding and border in width */
-    background-color: #2196F3; /* Blue background color */
+    background-color: #007BFF; /* Blue background color */
     text-align: center; /* Center the text */
     color: white; /* White text color */
 }
 
 /* Center the rest of the content */
-h2, p {
+.MQ_P {
     text-align: center; /* Center text horizontally */
     margin: 0 auto; /* Center the element itself (if it has a defined width) */
-    padding: 10px; /* Add some padding for spacing */
+    padding: 15px; /* Add some padding for spacing */
 }
 
-/* Optional: Limit the width of paragraphs for better readability */
+/* Optional: Limit the width of paragraphs for better text readability */
 p {
     max-width: 600px;
 }
@@ -40,22 +40,22 @@ p {
 }
 
 /* Style the text box to make it responsive */
-input[type="text"] {
-    padding: 8px;
+input[type='text'] {
+    padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     flex: 1; /* Allow the text box to grow and shrink */
-    max-width: 600px; /* Limit maximum width for larger screens */
+    max-width: 800px; /* Limit maximum width for larger screens */
     min-width: 200px; /* Ensure it doesn't become too small */
     box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 /* Style the button */
 button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 16px;
-    background-color: #2196F3; /* Match the top bar's blue theme */
+    background-color: #007BFF; /* Match the top bar's blue theme */
     color: white;
     border: none;
     border-radius: 4px;
@@ -65,13 +65,19 @@ button {
 
 /* Add hover effect to the button */
 button:hover {
-    background-color: #1976D2; /* Darker blue on hover */
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Style the displayed message */
 #displayMessage {
     text-align: center; /* Center the message */
-    margin-top: 20px; /* Add some space above the message */
+    margin-top: 20px; /* Add space above the message */
     font-size: 18px; /* Optional: Increase font size */
     color: #333; /* Optional: Set a text color */
+    border: 2px solid #007BFF; /* Add border to create a box */
+    padding: 15px; /* Add padding inside the box */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    max-width: 800px; /* Limit maximum width for larger screens */
+    margin-left: auto; /* Center the box horizontally */
+    margin-right: auto;
 }

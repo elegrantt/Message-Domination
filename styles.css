@@ -48,8 +48,8 @@ input[type="text"] {
 button {
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #2196F3; /* Match the top bar's blue theme */
-    color: red;
+    background-color: #FF0000; /* Match the top bar's blue theme */
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;

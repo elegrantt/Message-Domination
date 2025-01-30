@@ -39,7 +39,7 @@ p {
 
 /* Style the text box */
 input[type="text"] {
-    padding: 8px;
+    padding: 8px 8px 8px 16px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;

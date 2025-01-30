@@ -27,6 +27,7 @@ body, html {
 /* Optional: Limit the width of paragraphs for better text readability */
 p {
     max-width: 600px;
+    margin: 0 auto; /* Center paragraphs */
 }
 
 /* Center the text box and button using flexbox */
@@ -80,4 +81,5 @@ button:hover {
     max-width: 800px; /* Limit maximum width for larger screens */
     margin-left: auto; /* Center the box horizontally */
     margin-right: auto;
+    background-color: #f9f9f9; /* Optional: Add a light background color */
 }

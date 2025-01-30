@@ -44,6 +44,8 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 300px; /* Set a fixed width for the text box */
+    background-color: #222222;
+    color: white;
 }
 
 /* Style the button */

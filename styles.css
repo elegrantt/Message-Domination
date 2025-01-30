@@ -35,13 +35,22 @@ p {
     margin-top: 20px; /* Add some space above the container */
 }
 
-/* Style the text box */
+/* Style the text box to make it responsive */
 input[type="text"] {
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px; /* Set a fixed width for the text box */
+    width: 90%; /* Use a percentage-based width for responsiveness */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* Ensure the container stays centered */
+.input-container {
+    text-align: center; /* Center contents horizontally */
+    margin-top: 20px; /* Add space above the container */
+    padding: 0 10px; /* Add padding to prevent content from touching the edges */
 }
 
 /* Style the button */

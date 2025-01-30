@@ -1,23 +1,45 @@
-/* Basic styling for the header */
+/* Basic styling for the header (top bar) */
 .header {
   background-color: #f0f0f0; /* Example background color */
   padding: 10px; /* Example padding */
   display: flex;
-  justify-content: space-between; /* Align items to start and end */
-  align-items: center; /* Vertically center items */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center the h1 horizontally */
+  align-items: center; /* Vertically center the h1 */
+  width: 100%; /* Ensure the header spans the full width */
 }
 
 /* Style the heading */
 .header h1 {
   font-size: 1.5em; /* Adjust as needed */
   margin: 0; /* Remove default margins */
+  text-align: center; /* Center the text within the h1 */
 }
 
-/* Style the input container */
+/* Style the paragraph */
+p {
+  text-align: center; /* Center the paragraph text */
+  margin: 10px auto; /* Center the paragraph block */
+  max-width: 600px; /* Optional: set a max width for the paragraph */
+}
+
+/* Basic styling for the rest of the page (optional) */
+body {
+  font-family: sans-serif; /* Example font */
+  margin: 0; /* Remove default body margins */
+  padding: 0; /* Remove default body padding */
+}
+
+.content {
+  padding: 20px; /* Add padding to the main content area */
+}
+
+/* Styling for the input container */
 .input-container {
   display: flex;
+  justify-content: center; /* Center the input and button */
+  margin-top: 20px; /* Add some spacing above the input */
 }
+
 
 /* Style the input field */
 .message-input {
@@ -37,24 +59,28 @@
   cursor: pointer;
 }
 
-/* Media query for smaller screens */
+/* Style the latest message display */
+#latest-message {
+  margin-top: 20px; /* Add spacing above the message */
+  text-align: center; /* Center the message text */
+  min-height: 50px; /* Ensure there's always some height */
+}
+
+/* Media query for smaller screens (example) */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the left */
-    padding: 10px;
-  }
-
-  .header h1 {
-    margin-bottom: 5px; /* Add spacing below the heading */
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: center; /* Center items horizontally */
   }
 
   .input-container {
-    width: 100%; /* Make input container full width */
-    margin-bottom: 10px;
+    flex-direction: column; /* Stack input elements vertically */
+    align-items: center; /* Center items horizontally */
   }
 
   .message-input {
-    width: calc(100% - 60px); /* Adjust width for button */
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
   }
 }

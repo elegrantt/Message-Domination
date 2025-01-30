@@ -6,7 +6,7 @@ body, html {
 }
 
 /* Style the top bar */
-.heading {
+#heading {
     border-bottom: 2px solid black; /* Bottom border */
     padding: 15px; /* Add padding inside the bar */
     width: 100%; /* Full width */

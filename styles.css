@@ -63,7 +63,7 @@ button {
 
 /* Add hover effect to the button */
 button:hover {
-    background-color: #FFFFFF; /*  Black on hover */
+    background-color: #000000; /*  Black on hover */
     color: #FF0000
 }
 

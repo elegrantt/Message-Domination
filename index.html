@@ -63,5 +63,27 @@
       }
     });
   </script>
+<!-- Include Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+<!-- Add this script to check authentication -->
+<script>
+    // Check if the user is authenticated
+    firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+            // If the user is not signed in, redirect them to the login page
+            window.location.href = 'login.html';
+        } else {
+            // If the user is signed in, display their username
+            firebase.firestore().collection('users').doc(user.uid).get().then((doc) => {
+                if (doc.exists) {
+                    console.log("Welcome, " + doc.data().username + "!");
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

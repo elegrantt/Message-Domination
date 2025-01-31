@@ -39,7 +39,8 @@ p {
 
 /* Style the text box */
 input[type="text"] {
-    padding: 8px 8px 16px 8px;
+    padding: 8px;
+    margin-bottom: 20px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -62,7 +63,8 @@ button {
 
 /* Add hover effect to the button */
 button:hover {
-    background-color: #1976D2; /* Darker blue on hover */
+    background-color: #FFFFFF; /*  Black on hover */
+    color: #FF0000
 }
 
 /* Style the displayed message */

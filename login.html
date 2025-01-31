@@ -22,6 +22,24 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 
+    <!-- Initialize Firebase -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
     <!-- Include your custom JavaScript -->
     <script>
         // DOM elements
@@ -35,11 +53,11 @@
 
             try {
                 // Sign in anonymously
-                const userCredential = await firebase.auth().signInAnonymously();
+                const userCredential = await auth.signInAnonymously();
                 const user = userCredential.user;
 
                 // Store the username in Firestore
-                await firebase.firestore().collection('users').doc(user.uid).set({
+                await db.collection('users').doc(user.uid).set({
                     username: username,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                 });
@@ -58,7 +76,7 @@
         }
 
         // Monitor authentication state
-        firebase.auth().onAuthStateChanged((user) => {
+        auth.onAuthStateChanged((user) => {
             if (user) {
                 // If the user is already signed in, redirect them to the main page
                 redirectToMainPage();

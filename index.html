@@ -10,7 +10,7 @@
   <p>In Message Domination, you can send messages and try to beat people from across the globe! Anybody online will be able to send a message. Your goal is to have the last message! This site is still getting updated, so please report bugs on the Github repo.</p>
 
   <div class="input-container">
-    <input type="text" id="usernameInput" placeholder="Enter your username">
+    <input type="text" id="usernameInput" placeholder="Enter your username (optional)">
     <input type="text" id="messageInput" placeholder="Enter your message">
     <button onclick="storeMessage()">Submit</button>
   </div>
@@ -36,12 +36,17 @@
     const database = getDatabase(app);
 
     function storeMessage() {
-      const username = document.getElementById('usernameInput').value.trim();
+      let username = document.getElementById('usernameInput').value.trim();
       const message = document.getElementById('messageInput').value.trim();
 
-      if (!username || !message) {
-        alert("Please enter both a username and a message.");
+      if (!message) {
+        alert("Please enter a message.");
         return;
+      }
+
+      // Default to "Anonymous" if no username entered
+      if (!username) {
+        username = "Anonymous";
       }
 
       set(ref(database, 'messages/latest'), {

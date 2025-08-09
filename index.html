@@ -10,6 +10,7 @@
   <p>In Message Domination, you can send messages and try to beat people from across the globe! Anybody online will be able to send a message. Your goal is to have the last message! This site is still getting updated, so please report bugs on the Github repo.</p>
 
   <div class="input-container">
+    <input type="text" id="usernameInput" placeholder="Enter your username">
     <input type="text" id="messageInput" placeholder="Enter your message">
     <button onclick="storeMessage()">Submit</button>
   </div>
@@ -17,11 +18,9 @@
   <p id="displayMessage"></p>
 
   <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
     import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
 
-    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyCOQpcD2aZfk4se0p4dflESM-Af6p165tM",
       authDomain: "message-domination.firebaseapp.com",
@@ -33,39 +32,36 @@
       measurementId: "G-4HL3HFBXD8"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
 
-    // Function to store a message
     function storeMessage() {
-      const message = document.getElementById('messageInput').value;
+      const username = document.getElementById('usernameInput').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
 
-      // Store the message in Firebase
+      if (!username || !message) {
+        alert("Please enter both a username and a message.");
+        return;
+      }
+
       set(ref(database, 'messages/latest'), {
+        username: username,
         text: message,
         timestamp: Date.now()
       });
 
-      // Clear the input box
       document.getElementById('messageInput').value = '';
     }
 
-    // Attach the function to the window object
     window.storeMessage = storeMessage;
 
-    // Listen for changes to the latest message and update the display
     const latestMessageRef = ref(database, 'messages/latest');
     onValue(latestMessageRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        document.getElementById('displayMessage').textContent = `Latest message: ${data.text}`;
+        document.getElementById('displayMessage').textContent = `${data.username}: ${data.text}`;
       }
     });
   </script>
-<!-- Include Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 </body>
 </html>
